@@ -7,13 +7,21 @@ A CLI and library to fetch all comments for a GitHub pull request using github-r
 CLI usage
 
 ```bash
-get-pr-comments <owner> <repo> <prNumber>
+get-pr-comments <owner> <repo> <prNumber> [outputPath]
 ```
+
+If `outputPath` is provided, the output will be saved to that location. Otherwise, it defaults to `{owner}_{repo}_{prNumber}.json` in the current directory.
 
 NPM usage
 
 ```bash
+# Default output file
 npm run start -- dfberry gh 16
+# Creates: dfberry_gh_16.json
+
+# Custom output path
+npm run start -- dfberry gh 16 ../output/my-comments.json
+# Creates: ../output/my-comments.json
 ```
 
 ## Authentication
